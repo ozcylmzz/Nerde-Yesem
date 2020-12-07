@@ -1,0 +1,592 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		F7E68C57257E1222003B2A00 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7E68C56257E1222003B2A00 /* AppDelegate.swift */; };
+		F7E68C59257E1222003B2A00 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7E68C58257E1222003B2A00 /* SceneDelegate.swift */; };
+		F7E68C5B257E1222003B2A00 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7E68C5A257E1222003B2A00 /* ViewController.swift */; };
+		F7E68C5E257E1222003B2A00 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F7E68C5C257E1222003B2A00 /* Main.storyboard */; };
+		F7E68C60257E1223003B2A00 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F7E68C5F257E1223003B2A00 /* Assets.xcassets */; };
+		F7E68C63257E1223003B2A00 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F7E68C61257E1223003B2A00 /* LaunchScreen.storyboard */; };
+		F7E68C6E257E1223003B2A00 /* Nerde_YesemTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7E68C6D257E1223003B2A00 /* Nerde_YesemTests.swift */; };
+		F7E68C79257E1223003B2A00 /* Nerde_YesemUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7E68C78257E1223003B2A00 /* Nerde_YesemUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		F7E68C6A257E1223003B2A00 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F7E68C4B257E1222003B2A00 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F7E68C52257E1222003B2A00;
+			remoteInfo = "Nerde Yesem";
+		};
+		F7E68C75257E1223003B2A00 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F7E68C4B257E1222003B2A00 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F7E68C52257E1222003B2A00;
+			remoteInfo = "Nerde Yesem";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		F7E68C53257E1222003B2A00 /* Nerde Yesem.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Nerde Yesem.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		F7E68C56257E1222003B2A00 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		F7E68C58257E1222003B2A00 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		F7E68C5A257E1222003B2A00 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		F7E68C5D257E1222003B2A00 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		F7E68C5F257E1223003B2A00 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		F7E68C62257E1223003B2A00 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		F7E68C64257E1223003B2A00 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F7E68C69257E1223003B2A00 /* Nerde YesemTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Nerde YesemTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		F7E68C6D257E1223003B2A00 /* Nerde_YesemTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Nerde_YesemTests.swift; sourceTree = "<group>"; };
+		F7E68C6F257E1223003B2A00 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F7E68C74257E1223003B2A00 /* Nerde YesemUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Nerde YesemUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		F7E68C78257E1223003B2A00 /* Nerde_YesemUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Nerde_YesemUITests.swift; sourceTree = "<group>"; };
+		F7E68C7A257E1223003B2A00 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		F7E68C50257E1222003B2A00 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F7E68C66257E1223003B2A00 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F7E68C71257E1223003B2A00 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		F7E68C4A257E1222003B2A00 = {
+			isa = PBXGroup;
+			children = (
+				F7E68C55257E1222003B2A00 /* Nerde Yesem */,
+				F7E68C6C257E1223003B2A00 /* Nerde YesemTests */,
+				F7E68C77257E1223003B2A00 /* Nerde YesemUITests */,
+				F7E68C54257E1222003B2A00 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		F7E68C54257E1222003B2A00 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				F7E68C53257E1222003B2A00 /* Nerde Yesem.app */,
+				F7E68C69257E1223003B2A00 /* Nerde YesemTests.xctest */,
+				F7E68C74257E1223003B2A00 /* Nerde YesemUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		F7E68C55257E1222003B2A00 /* Nerde Yesem */ = {
+			isa = PBXGroup;
+			children = (
+				F7E68C56257E1222003B2A00 /* AppDelegate.swift */,
+				F7E68C58257E1222003B2A00 /* SceneDelegate.swift */,
+				F7E68C5A257E1222003B2A00 /* ViewController.swift */,
+				F7E68C5C257E1222003B2A00 /* Main.storyboard */,
+				F7E68C5F257E1223003B2A00 /* Assets.xcassets */,
+				F7E68C61257E1223003B2A00 /* LaunchScreen.storyboard */,
+				F7E68C64257E1223003B2A00 /* Info.plist */,
+			);
+			path = "Nerde Yesem";
+			sourceTree = "<group>";
+		};
+		F7E68C6C257E1223003B2A00 /* Nerde YesemTests */ = {
+			isa = PBXGroup;
+			children = (
+				F7E68C6D257E1223003B2A00 /* Nerde_YesemTests.swift */,
+				F7E68C6F257E1223003B2A00 /* Info.plist */,
+			);
+			path = "Nerde YesemTests";
+			sourceTree = "<group>";
+		};
+		F7E68C77257E1223003B2A00 /* Nerde YesemUITests */ = {
+			isa = PBXGroup;
+			children = (
+				F7E68C78257E1223003B2A00 /* Nerde_YesemUITests.swift */,
+				F7E68C7A257E1223003B2A00 /* Info.plist */,
+			);
+			path = "Nerde YesemUITests";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		F7E68C52257E1222003B2A00 /* Nerde Yesem */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F7E68C7D257E1223003B2A00 /* Build configuration list for PBXNativeTarget "Nerde Yesem" */;
+			buildPhases = (
+				F7E68C4F257E1222003B2A00 /* Sources */,
+				F7E68C50257E1222003B2A00 /* Frameworks */,
+				F7E68C51257E1222003B2A00 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Nerde Yesem";
+			productName = "Nerde Yesem";
+			productReference = F7E68C53257E1222003B2A00 /* Nerde Yesem.app */;
+			productType = "com.apple.product-type.application";
+		};
+		F7E68C68257E1223003B2A00 /* Nerde YesemTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F7E68C80257E1223003B2A00 /* Build configuration list for PBXNativeTarget "Nerde YesemTests" */;
+			buildPhases = (
+				F7E68C65257E1223003B2A00 /* Sources */,
+				F7E68C66257E1223003B2A00 /* Frameworks */,
+				F7E68C67257E1223003B2A00 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F7E68C6B257E1223003B2A00 /* PBXTargetDependency */,
+			);
+			name = "Nerde YesemTests";
+			productName = "Nerde YesemTests";
+			productReference = F7E68C69257E1223003B2A00 /* Nerde YesemTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		F7E68C73257E1223003B2A00 /* Nerde YesemUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F7E68C83257E1223003B2A00 /* Build configuration list for PBXNativeTarget "Nerde YesemUITests" */;
+			buildPhases = (
+				F7E68C70257E1223003B2A00 /* Sources */,
+				F7E68C71257E1223003B2A00 /* Frameworks */,
+				F7E68C72257E1223003B2A00 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F7E68C76257E1223003B2A00 /* PBXTargetDependency */,
+			);
+			name = "Nerde YesemUITests";
+			productName = "Nerde YesemUITests";
+			productReference = F7E68C74257E1223003B2A00 /* Nerde YesemUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		F7E68C4B257E1222003B2A00 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1220;
+				LastUpgradeCheck = 1220;
+				TargetAttributes = {
+					F7E68C52257E1222003B2A00 = {
+						CreatedOnToolsVersion = 12.2;
+					};
+					F7E68C68257E1223003B2A00 = {
+						CreatedOnToolsVersion = 12.2;
+						TestTargetID = F7E68C52257E1222003B2A00;
+					};
+					F7E68C73257E1223003B2A00 = {
+						CreatedOnToolsVersion = 12.2;
+						TestTargetID = F7E68C52257E1222003B2A00;
+					};
+				};
+			};
+			buildConfigurationList = F7E68C4E257E1222003B2A00 /* Build configuration list for PBXProject "Nerde Yesem" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = F7E68C4A257E1222003B2A00;
+			productRefGroup = F7E68C54257E1222003B2A00 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				F7E68C52257E1222003B2A00 /* Nerde Yesem */,
+				F7E68C68257E1223003B2A00 /* Nerde YesemTests */,
+				F7E68C73257E1223003B2A00 /* Nerde YesemUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		F7E68C51257E1222003B2A00 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F7E68C63257E1223003B2A00 /* LaunchScreen.storyboard in Resources */,
+				F7E68C60257E1223003B2A00 /* Assets.xcassets in Resources */,
+				F7E68C5E257E1222003B2A00 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F7E68C67257E1223003B2A00 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F7E68C72257E1223003B2A00 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		F7E68C4F257E1222003B2A00 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F7E68C5B257E1222003B2A00 /* ViewController.swift in Sources */,
+				F7E68C57257E1222003B2A00 /* AppDelegate.swift in Sources */,
+				F7E68C59257E1222003B2A00 /* SceneDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F7E68C65257E1223003B2A00 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F7E68C6E257E1223003B2A00 /* Nerde_YesemTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F7E68C70257E1223003B2A00 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F7E68C79257E1223003B2A00 /* Nerde_YesemUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		F7E68C6B257E1223003B2A00 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F7E68C52257E1222003B2A00 /* Nerde Yesem */;
+			targetProxy = F7E68C6A257E1223003B2A00 /* PBXContainerItemProxy */;
+		};
+		F7E68C76257E1223003B2A00 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F7E68C52257E1222003B2A00 /* Nerde Yesem */;
+			targetProxy = F7E68C75257E1223003B2A00 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		F7E68C5C257E1222003B2A00 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F7E68C5D257E1222003B2A00 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		F7E68C61257E1223003B2A00 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F7E68C62257E1223003B2A00 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		F7E68C7B257E1223003B2A00 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		F7E68C7C257E1223003B2A00 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		F7E68C7E257E1223003B2A00 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "Nerde Yesem/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.ozcnylmz.Nerde-Yesem";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		F7E68C7F257E1223003B2A00 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "Nerde Yesem/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.ozcnylmz.Nerde-Yesem";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+		F7E68C81257E1223003B2A00 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "Nerde YesemTests/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.ozcnylmz.Nerde-YesemTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Nerde Yesem.app/Nerde Yesem";
+			};
+			name = Debug;
+		};
+		F7E68C82257E1223003B2A00 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "Nerde YesemTests/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.ozcnylmz.Nerde-YesemTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Nerde Yesem.app/Nerde Yesem";
+			};
+			name = Release;
+		};
+		F7E68C84257E1223003B2A00 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "Nerde YesemUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.ozcnylmz.Nerde-YesemUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "Nerde Yesem";
+			};
+			name = Debug;
+		};
+		F7E68C85257E1223003B2A00 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "Nerde YesemUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.ozcnylmz.Nerde-YesemUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "Nerde Yesem";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		F7E68C4E257E1222003B2A00 /* Build configuration list for PBXProject "Nerde Yesem" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F7E68C7B257E1223003B2A00 /* Debug */,
+				F7E68C7C257E1223003B2A00 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F7E68C7D257E1223003B2A00 /* Build configuration list for PBXNativeTarget "Nerde Yesem" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F7E68C7E257E1223003B2A00 /* Debug */,
+				F7E68C7F257E1223003B2A00 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F7E68C80257E1223003B2A00 /* Build configuration list for PBXNativeTarget "Nerde YesemTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F7E68C81257E1223003B2A00 /* Debug */,
+				F7E68C82257E1223003B2A00 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F7E68C83257E1223003B2A00 /* Build configuration list for PBXNativeTarget "Nerde YesemUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F7E68C84257E1223003B2A00 /* Debug */,
+				F7E68C85257E1223003B2A00 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = F7E68C4B257E1222003B2A00 /* Project object */;
+}
