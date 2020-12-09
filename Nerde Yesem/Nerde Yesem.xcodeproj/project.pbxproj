@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F7B0E1B22580F9BC00FEF101 /* LocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7B0E1B12580F9BC00FEF101 /* LocationViewController.swift */; };
+		F7B0E1BA258100AF00FEF101 /* RestaurantViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7B0E1B9258100AF00FEF101 /* RestaurantViewController.swift */; };
 		F7E68C57257E1222003B2A00 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7E68C56257E1222003B2A00 /* AppDelegate.swift */; };
 		F7E68C59257E1222003B2A00 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7E68C58257E1222003B2A00 /* SceneDelegate.swift */; };
 		F7E68C5B257E1222003B2A00 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7E68C5A257E1222003B2A00 /* ViewController.swift */; };
@@ -35,6 +37,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		F7B0E1B12580F9BC00FEF101 /* LocationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationViewController.swift; sourceTree = "<group>"; };
+		F7B0E1B9258100AF00FEF101 /* RestaurantViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantViewController.swift; sourceTree = "<group>"; };
 		F7E68C53257E1222003B2A00 /* Nerde Yesem.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Nerde Yesem.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F7E68C56257E1222003B2A00 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F7E68C58257E1222003B2A00 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -76,6 +80,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		F7B0E1A82580E5BD00FEF101 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				F7B0E1B12580F9BC00FEF101 /* LocationViewController.swift */,
+				F7B0E1B9258100AF00FEF101 /* RestaurantViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
 		F7E68C4A257E1222003B2A00 = {
 			isa = PBXGroup;
 			children = (
@@ -99,6 +112,7 @@
 		F7E68C55257E1222003B2A00 /* Nerde Yesem */ = {
 			isa = PBXGroup;
 			children = (
+				F7B0E1A82580E5BD00FEF101 /* ViewControllers */,
 				F7E68C56257E1222003B2A00 /* AppDelegate.swift */,
 				F7E68C58257E1222003B2A00 /* SceneDelegate.swift */,
 				F7E68C5A257E1222003B2A00 /* ViewController.swift */,
@@ -258,6 +272,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F7B0E1B22580F9BC00FEF101 /* LocationViewController.swift in Sources */,
+				F7B0E1BA258100AF00FEF101 /* RestaurantViewController.swift in Sources */,
 				F7E68C5B257E1222003B2A00 /* ViewController.swift in Sources */,
 				F7E68C57257E1222003B2A00 /* AppDelegate.swift in Sources */,
 				F7E68C59257E1222003B2A00 /* SceneDelegate.swift in Sources */,
