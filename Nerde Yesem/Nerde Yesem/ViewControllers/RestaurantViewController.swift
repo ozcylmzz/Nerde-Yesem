@@ -12,6 +12,7 @@ class RestaurantViewController: UIViewController, UITableViewDelegate, UITableVi
     
     @IBOutlet weak var tableView: UITableView!
     var restaurant = [Restaurant]()
+    var selectedRestaurant = Restaurant(name: "", address: "", averageCostForTwo: "", aggregateRating: "", img: "")
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -50,6 +51,18 @@ class RestaurantViewController: UIViewController, UITableViewDelegate, UITableVi
         cell.restaurantImage.image = UIImage(data: data!)
         cell.restaurantImage.image = resizeImage(image: cell.restaurantImage.image!, newWidth: CGFloat(350))
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        selectedRestaurant = self.restaurant[indexPath.row]
+        performSegue(withIdentifier: "SelectedViewSegue", sender: self)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "SelectedViewSegue" {
+            let toVC = segue.destination as! SelectedViewController
+            toVC.selectedRestaurant = self.selectedRestaurant
+        }
     }
     
 }

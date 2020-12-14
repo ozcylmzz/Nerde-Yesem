@@ -8,9 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		F763642025868CF300D718B4 /* AuthenticationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F763641F25868CF300D718B4 /* AuthenticationViewController.swift */; };
+		F763642825878CA900D718B4 /* SelectedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F763642725878CA900D718B4 /* SelectedViewController.swift */; };
 		F7862B9E25820F6300E4910A /* RestaurantModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7862B9D25820F6300E4910A /* RestaurantModel.swift */; };
-		F7862BA725821ED100E4910A /* RestaurantService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7862BA625821ED100E4910A /* RestaurantService.swift */; };
-		F788738C2583A1E800DB4D40 /* LocationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F788738B2583A1E800DB4D40 /* LocationService.swift */; };
 		F7B0E1B22580F9BC00FEF101 /* LocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7B0E1B12580F9BC00FEF101 /* LocationViewController.swift */; };
 		F7B0E1BA258100AF00FEF101 /* RestaurantViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7B0E1B9258100AF00FEF101 /* RestaurantViewController.swift */; };
 		F7E68C57257E1222003B2A00 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7E68C56257E1222003B2A00 /* AppDelegate.swift */; };
@@ -42,9 +41,8 @@
 
 /* Begin PBXFileReference section */
 		F763641F25868CF300D718B4 /* AuthenticationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationViewController.swift; sourceTree = "<group>"; };
+		F763642725878CA900D718B4 /* SelectedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectedViewController.swift; sourceTree = "<group>"; };
 		F7862B9D25820F6300E4910A /* RestaurantModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantModel.swift; sourceTree = "<group>"; };
-		F7862BA625821ED100E4910A /* RestaurantService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantService.swift; sourceTree = "<group>"; };
-		F788738B2583A1E800DB4D40 /* LocationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationService.swift; sourceTree = "<group>"; };
 		F7B0E1B12580F9BC00FEF101 /* LocationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationViewController.swift; sourceTree = "<group>"; };
 		F7B0E1B9258100AF00FEF101 /* RestaurantViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantViewController.swift; sourceTree = "<group>"; };
 		F7E68C53257E1222003B2A00 /* Nerde Yesem.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Nerde Yesem.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -96,21 +94,13 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
-		F7862BA525821EA700E4910A /* Service */ = {
-			isa = PBXGroup;
-			children = (
-				F7862BA625821ED100E4910A /* RestaurantService.swift */,
-				F788738B2583A1E800DB4D40 /* LocationService.swift */,
-			);
-			path = Service;
-			sourceTree = "<group>";
-		};
 		F7B0E1A82580E5BD00FEF101 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
 				F7B0E1B12580F9BC00FEF101 /* LocationViewController.swift */,
 				F7B0E1B9258100AF00FEF101 /* RestaurantViewController.swift */,
 				F763641F25868CF300D718B4 /* AuthenticationViewController.swift */,
+				F763642725878CA900D718B4 /* SelectedViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -138,7 +128,6 @@
 		F7E68C55257E1222003B2A00 /* Nerde Yesem */ = {
 			isa = PBXGroup;
 			children = (
-				F7862BA525821EA700E4910A /* Service */,
 				F7862B9C25820F4E00E4910A /* Model */,
 				F7B0E1A82580E5BD00FEF101 /* ViewControllers */,
 				F7E68C56257E1222003B2A00 /* AppDelegate.swift */,
@@ -302,13 +291,12 @@
 			files = (
 				F7B0E1B22580F9BC00FEF101 /* LocationViewController.swift in Sources */,
 				F7B0E1BA258100AF00FEF101 /* RestaurantViewController.swift in Sources */,
-				F788738C2583A1E800DB4D40 /* LocationService.swift in Sources */,
 				F7E68C5B257E1222003B2A00 /* ViewController.swift in Sources */,
 				F763642025868CF300D718B4 /* AuthenticationViewController.swift in Sources */,
 				F7E68C57257E1222003B2A00 /* AppDelegate.swift in Sources */,
-				F7862BA725821ED100E4910A /* RestaurantService.swift in Sources */,
 				F7862B9E25820F6300E4910A /* RestaurantModel.swift in Sources */,
 				F7E68C59257E1222003B2A00 /* SceneDelegate.swift in Sources */,
+				F763642825878CA900D718B4 /* SelectedViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
