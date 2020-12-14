@@ -7,8 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F763642025868CF300D718B4 /* AuthenticationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F763641F25868CF300D718B4 /* AuthenticationViewController.swift */; };
 		F7862B9E25820F6300E4910A /* RestaurantModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7862B9D25820F6300E4910A /* RestaurantModel.swift */; };
 		F7862BA725821ED100E4910A /* RestaurantService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7862BA625821ED100E4910A /* RestaurantService.swift */; };
+		F788738C2583A1E800DB4D40 /* LocationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F788738B2583A1E800DB4D40 /* LocationService.swift */; };
 		F7B0E1B22580F9BC00FEF101 /* LocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7B0E1B12580F9BC00FEF101 /* LocationViewController.swift */; };
 		F7B0E1BA258100AF00FEF101 /* RestaurantViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7B0E1B9258100AF00FEF101 /* RestaurantViewController.swift */; };
 		F7E68C57257E1222003B2A00 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7E68C56257E1222003B2A00 /* AppDelegate.swift */; };
@@ -39,8 +41,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		F763641F25868CF300D718B4 /* AuthenticationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationViewController.swift; sourceTree = "<group>"; };
 		F7862B9D25820F6300E4910A /* RestaurantModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantModel.swift; sourceTree = "<group>"; };
 		F7862BA625821ED100E4910A /* RestaurantService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantService.swift; sourceTree = "<group>"; };
+		F788738B2583A1E800DB4D40 /* LocationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationService.swift; sourceTree = "<group>"; };
 		F7B0E1B12580F9BC00FEF101 /* LocationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationViewController.swift; sourceTree = "<group>"; };
 		F7B0E1B9258100AF00FEF101 /* RestaurantViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantViewController.swift; sourceTree = "<group>"; };
 		F7E68C53257E1222003B2A00 /* Nerde Yesem.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Nerde Yesem.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -96,6 +100,7 @@
 			isa = PBXGroup;
 			children = (
 				F7862BA625821ED100E4910A /* RestaurantService.swift */,
+				F788738B2583A1E800DB4D40 /* LocationService.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -105,6 +110,7 @@
 			children = (
 				F7B0E1B12580F9BC00FEF101 /* LocationViewController.swift */,
 				F7B0E1B9258100AF00FEF101 /* RestaurantViewController.swift */,
+				F763641F25868CF300D718B4 /* AuthenticationViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -296,7 +302,9 @@
 			files = (
 				F7B0E1B22580F9BC00FEF101 /* LocationViewController.swift in Sources */,
 				F7B0E1BA258100AF00FEF101 /* RestaurantViewController.swift in Sources */,
+				F788738C2583A1E800DB4D40 /* LocationService.swift in Sources */,
 				F7E68C5B257E1222003B2A00 /* ViewController.swift in Sources */,
+				F763642025868CF300D718B4 /* AuthenticationViewController.swift in Sources */,
 				F7E68C57257E1222003B2A00 /* AppDelegate.swift in Sources */,
 				F7862BA725821ED100E4910A /* RestaurantService.swift in Sources */,
 				F7862B9E25820F6300E4910A /* RestaurantModel.swift in Sources */,
@@ -477,6 +485,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 63N7D26M8T;
 				INFOPLIST_FILE = "Nerde Yesem/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -495,6 +504,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 63N7D26M8T;
 				INFOPLIST_FILE = "Nerde Yesem/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

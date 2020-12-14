@@ -5,15 +5,15 @@
 //  Created by Özcan Yılmaz on 10.12.2020.
 //
 
-import Foundation
+import UIKit
 
-class RestaurantService {
+class RestaurantService: UIViewController {
     
-    static var RestaurantData: Array<Restaurant> = []
+    var RestaurantData: Array<Restaurant> = []
     
     func fetchData(_latitute: String, _longitude: String) {
         
-        RestaurantService.RestaurantData.removeAll()
+        RestaurantData.removeAll()
         
         let userKey = "243455cc454bcf8d2e60d90e4c074d19"
         let urlString = "https://developers.zomato.com/api/v2.1/geocode?lat="+_latitute+"&lon="+_longitude
@@ -22,7 +22,7 @@ class RestaurantService {
         request.addValue(userKey, forHTTPHeaderField: "user-key")
 //        let session = URLSession(configuration: .default)
 //        let task = session.dataTask(with: url) { (data, response, error) in
-        URLSession.shared.dataTask(with: request){ (data, response, error) in
+        URLSession.shared.dataTask(with: request){ [self] (data, response, error) in
             if error != nil {
                 
                 print("Error in dataTask")
@@ -53,10 +53,24 @@ class RestaurantService {
                     
                     let restaurants = Restaurant.init(name: name, address: address, averageCostForTwo: averageCost, aggregateRating: aggregateRating , img: img)
                     
-                    RestaurantService.RestaurantData.append(restaurants)
+                    RestaurantData.append(restaurants)
+                    
+                }
+                DispatchQueue.main.async {
+                   self.dismiss(animated: false, completion: nil)
                 }
             }
         }.resume()
-        
+    
     }
+    
+    
+//    override func prepare(for segue: UIStoryboardSegue, sender: Any?)
+//        {
+//            if segue.identifier == "RestaurantViewController"
+//            {
+//                let destinationVC = segue.destination as! RestaurantViewController
+//                destinationVC.restaurant = self.RestaurantData
+//            }
+//        }
 }
