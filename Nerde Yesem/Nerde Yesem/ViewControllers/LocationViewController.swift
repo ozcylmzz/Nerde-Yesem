@@ -7,6 +7,7 @@
 
 import UIKit
 import CoreLocation
+import LocalAuthentication
 
 class LocationViewController: UIViewController, CLLocationManagerDelegate {
     
@@ -18,6 +19,8 @@ class LocationViewController: UIViewController, CLLocationManagerDelegate {
         locationManager.delegate = self
         locationManager.requestWhenInUseAuthorization()
     }
+    
+    
     
     func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
         switch CLLocationManager.authorizationStatus() {
