@@ -12,7 +12,7 @@ class RestaurantViewController: UIViewController, UITableViewDelegate, UITableVi
     
     @IBOutlet weak var tableView: UITableView!
     var restaurant = [Restaurant]()
-    var selectedRestaurant = Restaurant(name: "", address: "", averageCostForTwo: "", aggregateRating: "", img: "")
+    var selectedRestaurant = Restaurant(name: "", address: "", averageCostForTwo: "", aggregateRating: "", img: "", webUrl: "")
     
     override func viewDidLoad() {
         super.viewDidLoad()

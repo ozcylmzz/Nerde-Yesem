@@ -13,15 +13,15 @@ class LocationViewController: UIViewController, CLLocationManagerDelegate {
     
     let locationManager = CLLocationManager()
     var restaurants = [Restaurant]()
+    var result: Bool!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         locationManager.delegate = self
+        locationManager.desiredAccuracy=kCLLocationAccuracyBest;
         locationManager.requestWhenInUseAuthorization()
     }
-    
-    
-    
+        
     func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
         switch CLLocationManager.authorizationStatus() {
         case .authorizedAlways:
@@ -39,25 +39,18 @@ class LocationViewController: UIViewController, CLLocationManagerDelegate {
         @unknown default:
             print("error")
         }
-//        if status == .denied || status == .restricted || status == .notDetermined {
-//            locationManager.requestWhenInUseAuthorization()
-//            locationManager.requestLocation()
-//        } else {
-//            let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
-//            let nextViewController = storyBoard.instantiateViewController(withIdentifier: "RestaurantViewController") as! RestaurantViewController
-//            self.present(nextViewController, animated:true, completion:nil)
-//        }
+
     }
 
-    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         if let location = locations.last {
             let lat: String = location.coordinate.latitude.description
             let lon: String = location.coordinate.longitude.description
             print(lat)
             print(lon)
             print("Did get Update loation")
-            fetchData(_latitute: "41.01", _longitude: "28.97")
-//            fetchData(_latitute: lat, _longitude: lon)
+//            fetchData(_latitute: "41.01", _longitude: "28.97")
+            fetchData(_latitute: lat, _longitude: lon)
         }
     }
     
@@ -95,6 +88,7 @@ class LocationViewController: UIViewController, CLLocationManagerDelegate {
                     let userRating = (nearRestaurant["user_rating"] as! Dictionary<String,Any>)
                     let location = (nearRestaurant["location"] as! Dictionary<String,Any>)
                     
+                    let webUrl = nearRestaurant["url"] as! String
                     let name = nearRestaurant["name"] as! String
                     let address = location["address"] as! String
                     let averageCostForTwo = nearRestaurant["average_cost_for_two"] as! Int
@@ -103,9 +97,9 @@ class LocationViewController: UIViewController, CLLocationManagerDelegate {
                     let img = nearRestaurant["featured_image"] as! String
                     
                     let averageCost = averageCostForTwo.description + currency
-                    print(name, img, address, aggregateRating, averageCost)
+                    print(name, img, address, aggregateRating, averageCost, webUrl)
                     
-                    let restaurants = Restaurant.init(name: name, address: address, averageCostForTwo: averageCost, aggregateRating: aggregateRating , img: img)
+                    let restaurants = Restaurant.init(name: name, address: address, averageCostForTwo: averageCost, aggregateRating: aggregateRating , img: img, webUrl: webUrl)
                     
                     self.restaurants.append(restaurants)
                     
@@ -128,6 +122,6 @@ class LocationViewController: UIViewController, CLLocationManagerDelegate {
     @IBAction func showButton(_ sender: UIButton) {
         if restaurants.count > 0 {
             self.performSegue(withIdentifier: "RestaurantViewSegue", sender: self)
-        }
+        } 
     }
 }
