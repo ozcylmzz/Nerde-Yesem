@@ -7,6 +7,7 @@
 
 import UIKit
 import MapKit
+import Firebase
 
 class SelectedViewController: UIViewController {
     
@@ -18,6 +19,9 @@ class SelectedViewController: UIViewController {
     @IBOutlet weak var ratingLabel: UILabel!
     @IBOutlet weak var shareLabel: UILabel!
     @IBOutlet weak var mapView: MKMapView!
+    @IBOutlet weak var isLikedButton: UIBarButtonItem!
+    
+    let db = Firestore.firestore()
     
     var selectedRestaurant = Restaurant(id: "", name: "", address: "", latitude: "", longitude: "", averageCostForTwo: "", aggregateRating: "", img: "", webUrl: "")
     
@@ -38,9 +42,71 @@ class SelectedViewController: UIViewController {
         let url = URL(string: urlString)
         let data = try? Data(contentsOf: url!)
         imageView.image = UIImage(data: data!)
-        
+        isLiked()
     }
     
+    func isLiked() {
+        
+        let docRef = db.collection("Favourites").whereField("id", isEqualTo: selectedRestaurant.getId()).limit(to: 1)
+        docRef.getDocuments { (querysnapshot, error) in
+            if error != nil {
+                print("Document Error: ", error!)
+            } else {
+                if let doc = querysnapshot?.documents, !doc.isEmpty {
+                    print("Document is present.")
+                    self.isLikedButton.title = "Liked"
+                } else {
+                    print("Document is not present.")
+                    self.isLikedButton.title = "UnLiked"
+                }
+            }
+        }
+
+    }
+    
+    @IBAction func isLikedTap(_ sender: UIBarButtonItem) {
+        
+        if isLikedButton.title!.description == "Liked" {
+            print("it's already added to database.")
+            db.collection("Favourites").whereField("id", isEqualTo: selectedRestaurant.getId()).getDocuments { (querySnapshot, error) in
+                if error != nil {
+                    print(error)
+                } else {
+                    for document in querySnapshot!.documents {
+                        document.reference.delete()
+                    }
+
+                }
+            }
+            self.isLikedButton.title = "UnLiked"
+        } else {
+            print("it's not exist in database.")
+            if let user = Auth.auth().currentUser?.email {
+                db.collection("Favourites").addDocument(data: [
+                    "user": user,
+                    "id": selectedRestaurant.getId(),
+                    "name": selectedRestaurant.getName(),
+                    "address": selectedRestaurant.getAddress(),
+                    "latitude": selectedRestaurant.getLatitude(),
+                    "longitude": selectedRestaurant.getLongitude(),
+                    "averageCostForTwo": selectedRestaurant.getAverageCostForTwo(),
+                    "aggregateRating": selectedRestaurant.getAggregateRating(),
+                    "img": selectedRestaurant.getImg(),
+                    "webUrl": selectedRestaurant.getWebUrl()
+                ]) { (error) in
+                    if let e = error {
+                        print("İssue on saving data to firestore, \(e)")
+                    } else {
+                        print("Successfully saved data.")
+                        self.isLikedButton.title = "Liked"
+                    }
+                }
+            }
+            
+        }
+        
+        
+    }
     
     @IBAction func shareWithWhatsApp(_ sender: UIButton) {
         

@@ -17,6 +17,7 @@ class LocationViewController: UIViewController, CLLocationManagerDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        navigationItem.hidesBackButton = true
         locationManager.delegate = self
         locationManager.desiredAccuracy=kCLLocationAccuracyBest;
         locationManager.requestWhenInUseAuthorization()

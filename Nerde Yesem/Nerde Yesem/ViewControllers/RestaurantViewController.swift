@@ -6,7 +6,7 @@
 //
 
 import UIKit
-
+import Firebase
 
 class RestaurantViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
@@ -16,9 +16,22 @@ class RestaurantViewController: UIViewController, UITableViewDelegate, UITableVi
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        navigationItem.hidesBackButton = true
         tableView.delegate = self
         tableView.dataSource = self
     }
+    
+    @IBAction func logOutTapped(_ sender: UIBarButtonItem) {
+        
+        do {
+            try Auth.auth().signOut()
+            navigationController?.popToRootViewController(animated: true)
+            
+        } catch let signOutError as NSError {
+          print ("Error signing out: %@", signOutError)
+        }
+    }
+    
     
     func resizeImage(image: UIImage, newWidth: CGFloat) -> UIImage {
 
