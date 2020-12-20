@@ -35,6 +35,7 @@ class AuthenticationViewController: UIViewController {
         super.viewDidLoad()
         context.canEvaluatePolicy(.deviceOwnerAuthentication, error: nil)
         state = .loggedout
+        authUser()
         
     }
 
@@ -63,6 +64,7 @@ class AuthenticationViewController: UIViewController {
                     if success {
 
                         DispatchQueue.main.async { [unowned self] in
+                            result = true
                             self.state = .loggedin
                         }
 

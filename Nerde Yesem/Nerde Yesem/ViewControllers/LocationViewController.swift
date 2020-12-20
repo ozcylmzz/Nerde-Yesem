@@ -88,18 +88,21 @@ class LocationViewController: UIViewController, CLLocationManagerDelegate {
                     let userRating = (nearRestaurant["user_rating"] as! Dictionary<String,Any>)
                     let location = (nearRestaurant["location"] as! Dictionary<String,Any>)
                     
-                    let webUrl = nearRestaurant["url"] as! String
+                    let id = nearRestaurant["id"] as! String
                     let name = nearRestaurant["name"] as! String
                     let address = location["address"] as! String
+                    let latitude = location["latitude"] as! String
+                    let longitude = location["longitude"] as! String
                     let averageCostForTwo = nearRestaurant["average_cost_for_two"] as! Int
                     let currency = nearRestaurant["currency"] as! String
                     let aggregateRating = userRating["aggregate_rating"] as! String
                     let img = nearRestaurant["featured_image"] as! String
+                    let webUrl = nearRestaurant["url"] as! String
                     
                     let averageCost = averageCostForTwo.description + currency
-                    print(name, img, address, aggregateRating, averageCost, webUrl)
+                    print(id, name, img, address, latitude, longitude, aggregateRating, averageCost, webUrl)
                     
-                    let restaurants = Restaurant.init(name: name, address: address, averageCostForTwo: averageCost, aggregateRating: aggregateRating , img: img, webUrl: webUrl)
+                    let restaurants = Restaurant.init(id: id, name: name, address: address, latitude: latitude, longitude: longitude, averageCostForTwo: averageCost, aggregateRating: aggregateRating , img: img, webUrl: webUrl)
                     
                     self.restaurants.append(restaurants)
                     

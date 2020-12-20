@@ -1,0 +1,14 @@
+platform :ios, '14.2'
+
+target 'Nerde Yesem' do
+  use_frameworks!
+
+  # Pods for Nerde Yesem
+	
+  pod 'Firebase/Analytics'
+  pod 'Firebase/Crashlytics'
+  pod 'Firebase/Storage'
+  pod 'Firebase/Auth'
+  pod 'Firebase/Firestore'
+
+end

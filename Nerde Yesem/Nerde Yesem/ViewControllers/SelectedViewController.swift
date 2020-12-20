@@ -19,7 +19,7 @@ class SelectedViewController: UIViewController {
     @IBOutlet weak var shareLabel: UILabel!
     @IBOutlet weak var mapView: MKMapView!
     
-    var selectedRestaurant = Restaurant(name: "", address: "", averageCostForTwo: "", aggregateRating: "", img: "", webUrl: "")
+    var selectedRestaurant = Restaurant(id: "", name: "", address: "", latitude: "", longitude: "", averageCostForTwo: "", aggregateRating: "", img: "", webUrl: "")
     
     override func viewDidLoad() {
         

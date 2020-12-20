@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>40538869863-udnvbco25803ariutj0b78qrstu3vk62.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.40538869863-udnvbco25803ariutj0b78qrstu3vk62</string>
+	<key>API_KEY</key>
+	<string>AIzaSyASgfpdLha88DsjQq1kR0zqtfObwfcNO3A</string>
+	<key>GCM_SENDER_ID</key>
+	<string>40538869863</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.ozcnylmz.Nerde-Yesem</string>
+	<key>PROJECT_ID</key>
+	<string>nerde-yesem-d525c</string>
+	<key>STORAGE_BUCKET</key>
+	<string>nerde-yesem-d525c.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:40538869863:ios:a53a53a77a22f1599644c2</string>
+</dict>
+</plist>
