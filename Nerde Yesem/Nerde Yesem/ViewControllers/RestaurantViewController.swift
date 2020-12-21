@@ -12,7 +12,7 @@ class RestaurantViewController: UIViewController, UITableViewDelegate, UITableVi
     
     @IBOutlet weak var tableView: UITableView!
     var restaurant = [Restaurant]()
-    var selectedRestaurant = Restaurant(id: "", name: "", address: "", latitude: "", longitude: "", averageCostForTwo: "", aggregateRating: "", img: "", webUrl: "")
+    var selectedRestaurant = Restaurant(id: "", name: "", address: "", latitude: "", longitude: "", averageCostForTwo: "", aggregateRating: "", img: "", webUrl: "", distance: "")
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,6 +29,9 @@ class RestaurantViewController: UIViewController, UITableViewDelegate, UITableVi
             
         } catch let signOutError as NSError {
           print ("Error signing out: %@", signOutError)
+            let ac = UIAlertController(title: "Signin out failed", message: signOutError.localizedDescription, preferredStyle: .alert)
+            ac.addAction(UIAlertAction(title: "OK", style: .default))
+            self.present(ac, animated: true)
         }
     }
     
@@ -63,6 +66,7 @@ class RestaurantViewController: UIViewController, UITableViewDelegate, UITableVi
         let data = try? Data(contentsOf: url!)
         cell.restaurantImage.image = UIImage(data: data!)
         cell.restaurantImage.image = resizeImage(image: cell.restaurantImage.image!, newWidth: CGFloat(350))
+        cell.restaurantDistance.text = self.restaurant[indexPath.row].getDistance()
         return cell
     }
     

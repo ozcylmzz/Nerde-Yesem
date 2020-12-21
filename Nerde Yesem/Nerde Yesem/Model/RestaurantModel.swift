@@ -16,8 +16,9 @@ class Restaurant {
     let aggregateRating: String
     let img: String
     let webUrl: String
+    let distance: String
     
-    init(id: String, name: String, address: String, latitude: String, longitude: String, averageCostForTwo: String, aggregateRating: String, img: String, webUrl: String) {
+    init(id: String, name: String, address: String, latitude: String, longitude: String, averageCostForTwo: String, aggregateRating: String, img: String, webUrl: String, distance: String) {
         self.id = id
         self.name = name
         self.address = address
@@ -27,6 +28,7 @@ class Restaurant {
         self.aggregateRating = aggregateRating
         self.img = img
         self.webUrl = webUrl
+        self.distance = distance
     }
     
     func getId() -> String {
@@ -63,5 +65,9 @@ class Restaurant {
     
     func getWebUrl() -> String {
         return webUrl
+    }
+    
+    func getDistance() -> String {
+        return distance
     }
 }

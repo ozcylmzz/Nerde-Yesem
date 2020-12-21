@@ -23,7 +23,7 @@ class SelectedViewController: UIViewController {
     
     let db = Firestore.firestore()
     
-    var selectedRestaurant = Restaurant(id: "", name: "", address: "", latitude: "", longitude: "", averageCostForTwo: "", aggregateRating: "", img: "", webUrl: "")
+    var selectedRestaurant = Restaurant(id: "", name: "", address: "", latitude: "", longitude: "", averageCostForTwo: "", aggregateRating: "", img: "", webUrl: "", distance: "")
     
     override func viewDidLoad() {
         
@@ -42,6 +42,18 @@ class SelectedViewController: UIViewController {
         let url = URL(string: urlString)
         let data = try? Data(contentsOf: url!)
         imageView.image = UIImage(data: data!)
+        
+        let annotation = MKPointAnnotation()
+        let centerCoordinate = CLLocationCoordinate2D(latitude: Double(selectedRestaurant.getLatitude())!, longitude: Double(selectedRestaurant.getLongitude())!)
+        annotation.coordinate = centerCoordinate
+        annotation.title = selectedRestaurant.getName()
+        mapView.addAnnotation(annotation)
+        
+        let span = MKCoordinateSpan.init(latitudeDelta: 0.01, longitudeDelta:
+        0.01)
+        let region = MKCoordinateRegion.init(center: centerCoordinate, span: span)
+        mapView.setRegion(region, animated: true)
+        
         isLiked()
     }
     
@@ -92,7 +104,8 @@ class SelectedViewController: UIViewController {
                     "averageCostForTwo": selectedRestaurant.getAverageCostForTwo(),
                     "aggregateRating": selectedRestaurant.getAggregateRating(),
                     "img": selectedRestaurant.getImg(),
-                    "webUrl": selectedRestaurant.getWebUrl()
+                    "webUrl": selectedRestaurant.getWebUrl(),
+                    "distance": selectedRestaurant.getDistance()
                 ]) { (error) in
                     if let e = error {
                         print("İssue on saving data to firestore, \(e)")
@@ -120,7 +133,10 @@ class SelectedViewController: UIViewController {
                 if UIApplication.shared.canOpenURL(whatsappURL) {
                     UIApplication.shared.open(whatsappURL, options: [: ], completionHandler: nil)
                 } else {
-                    debugPrint("please install WhatsApp")
+                    print("please install WhatsApp")
+                    let ac = UIAlertController(title: "Failed", message: "Please install WhatsApp", preferredStyle: .alert)
+                    ac.addAction(UIAlertAction(title: "OK", style: .default))
+                    self.present(ac, animated: true)
                 }
             }
         }

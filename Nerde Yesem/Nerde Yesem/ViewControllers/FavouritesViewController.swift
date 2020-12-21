@@ -13,7 +13,7 @@ class FavouritesViewController: UIViewController , UITableViewDelegate, UITableV
 
     @IBOutlet weak var tableView: UITableView!
     var restaurant = [Restaurant]()
-    var selectedRestaurant = Restaurant(id: "", name: "", address: "", latitude: "", longitude: "", averageCostForTwo: "", aggregateRating: "", img: "", webUrl: "")
+    var selectedRestaurant = Restaurant(id: "", name: "", address: "", latitude: "", longitude: "", averageCostForTwo: "", aggregateRating: "", img: "", webUrl: "", distance: "")
     
     let db = Firestore.firestore()
     
@@ -25,19 +25,9 @@ class FavouritesViewController: UIViewController , UITableViewDelegate, UITableV
         loadRestaurants()
     }
     
-//    @IBAction func logOutTapped(_ sender: UIBarButtonItem) {
-//        
-//        do {
-//            try Auth.auth().signOut()
-//            navigationController?.popToRootViewController(animated: true)
-//            
-//        } catch let signOutError as NSError {
-//          print ("Error signing out: %@", signOutError)
-//        }
-//    }
-    
     func loadRestaurants() {
         
+        let currentUser = Auth.auth().currentUser?.email
         db.collection("Favourites")
 //            .order()
             .addSnapshotListener { (querySnapshot, error) in
@@ -58,16 +48,16 @@ class FavouritesViewController: UIViewController , UITableViewDelegate, UITableV
                            let averageCostForTwo = data["averageCostForTwo"] as? String,
                            let aggregateRating = data["aggregateRating"] as? String,
                            let img = data["img"] as? String,
-                           let webUrl = data["webUrl"] as? String {
-//                            self.restaurant(id: id, name: name, address: address, latitude: latitude, longitude: longitude, averageCostForTwo: averageCostForTwo, aggregateRating: aggregateRating, img: img, webUrl: webUrl)
-//                            let newMessage = Message(sender: messageSender, body: messageBody)
-//                                self.restaurant.append(newMessage)
-                            let restaurant = Restaurant.init(id: id, name: name, address: address, latitude: latitude, longitude: longitude, averageCostForTwo: averageCostForTwo, aggregateRating: aggregateRating , img: img, webUrl: webUrl)
-                            self.restaurant.append(restaurant)
-                            DispatchQueue.main.async {
-                                   self.tableView.reloadData()
-                                let indexPath = IndexPath(row: self.restaurant.count - 1, section: 0)
-                                self.tableView.scrollToRow(at: indexPath, at: .top, animated: false)
+                           let webUrl = data["webUrl"] as? String,
+                           let distance = data["distance"] as? String {
+                            if currentUser == user {
+                                let restaurant = Restaurant.init(id: id, name: name, address: address, latitude: latitude, longitude: longitude, averageCostForTwo: averageCostForTwo, aggregateRating: aggregateRating , img: img, webUrl: webUrl, distance: distance)
+                                self.restaurant.append(restaurant)
+                                DispatchQueue.main.async {
+                                        self.tableView.reloadData()
+                                        let indexPath = IndexPath(row: self.restaurant.count - 1, section: 0)
+                                        self.tableView.scrollToRow(at: indexPath, at: .top, animated: false)
+                                }
                             }
                         }
                     }
@@ -106,6 +96,7 @@ class FavouritesViewController: UIViewController , UITableViewDelegate, UITableV
         let data = try? Data(contentsOf: url!)
         cell.restaurantImage.image = UIImage(data: data!)
         cell.restaurantImage.image = resizeImage(image: cell.restaurantImage.image!, newWidth: CGFloat(350))
+        cell.restaurantDistance.text = self.restaurant[indexPath.row].getDistance()
         return cell
     }
 

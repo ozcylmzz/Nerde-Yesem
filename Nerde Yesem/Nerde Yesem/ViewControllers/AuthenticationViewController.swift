@@ -12,7 +12,6 @@ class AuthenticationViewController: UIViewController {
  
     @IBOutlet weak var loginButton: UIButton!
     var context = LAContext()
-    var result: Bool = false
 
     enum AuthenticationState {
         case loggedin, loggedout
@@ -64,7 +63,6 @@ class AuthenticationViewController: UIViewController {
                     if success {
 
                         DispatchQueue.main.async { [unowned self] in
-                            result = true
                             self.state = .loggedin
                         }
 

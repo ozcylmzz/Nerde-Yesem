@@ -49,8 +49,7 @@ class LocationViewController: UIViewController, CLLocationManagerDelegate {
             let lon: String = location.coordinate.longitude.description
             print(lat)
             print(lon)
-            print("Did get Update loation")
-//            fetchData(_latitute: "41.01", _longitude: "28.97")
+            print("Did get Update location")
             fetchData(_latitute: lat, _longitude: lon)
         }
     }
@@ -68,8 +67,6 @@ class LocationViewController: UIViewController, CLLocationManagerDelegate {
         let url = URL(string: urlString)!
         var request = URLRequest(url: url)
         request.addValue(userKey, forHTTPHeaderField: "user-key")
-//        let session = URLSession(configuration: .default)
-//        let task = session.dataTask(with: url) { (data, response, error) in
         URLSession.shared.dataTask(with: request){ [self] (data, response, error) in
             if error != nil {
                 
@@ -80,8 +77,6 @@ class LocationViewController: UIViewController, CLLocationManagerDelegate {
                 let jsonResponse = try? (JSONSerialization.jsonObject(with: data!, options: JSONSerialization.ReadingOptions.mutableContainers) as? Dictionary<String,Any>)
                 
                 let nearby_restaurant = (jsonResponse?["nearby_restaurants"] as! Array<Dictionary<String,Any>>)
-//                let userRating = (jsonResponse?["user_rating"] as! Dictionary<String,Any>)
-//                let location = (jsonResponse?["location"] as! Dictionary<String,Any>)
                 
                 for i in 0...nearby_restaurant.count-1{
                     
@@ -103,7 +98,14 @@ class LocationViewController: UIViewController, CLLocationManagerDelegate {
                     let averageCost = averageCostForTwo.description + currency
                     print(id, name, img, address, latitude, longitude, aggregateRating, averageCost, webUrl)
                     
-                    let restaurants = Restaurant.init(id: id, name: name, address: address, latitude: latitude, longitude: longitude, averageCostForTwo: averageCost, aggregateRating: aggregateRating , img: img, webUrl: webUrl)
+                    let myLocation = CLLocation(latitude: Double(_latitute)!, longitude: Double(_longitude)!)
+                    let myBuddysLocation = CLLocation(latitude: Double(latitude)!, longitude: Double(longitude)!)
+                    var distance = myLocation.distance(from: myBuddysLocation) / 1000
+                    distance = (distance*100).rounded()/100
+                    let distanceString = distance.description
+                    print("Distance: \(distanceString)")
+                    
+                    let restaurants = Restaurant.init(id: id, name: name, address: address, latitude: latitude, longitude: longitude, averageCostForTwo: averageCost, aggregateRating: aggregateRating , img: img, webUrl: webUrl, distance: distanceString)
                     
                     self.restaurants.append(restaurants)
                     
