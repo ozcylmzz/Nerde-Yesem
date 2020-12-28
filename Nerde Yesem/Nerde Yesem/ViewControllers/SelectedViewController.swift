@@ -20,11 +20,12 @@ class SelectedViewController: UIViewController {
     @IBOutlet weak var shareLabel: UILabel!
     @IBOutlet weak var mapView: MKMapView!
     @IBOutlet weak var isLikedButton: UIBarButtonItem!
+    @IBOutlet weak var uploadLabel: UILabel!
     
     let db = Firestore.firestore()
     
     var selectedRestaurant = Restaurant(id: "", name: "", address: "", latitude: "", longitude: "", averageCostForTwo: "", aggregateRating: "", img: "", webUrl: "", distance: "")
-    
+
     override func viewDidLoad() {
         
         super.viewDidLoad()
@@ -55,10 +56,10 @@ class SelectedViewController: UIViewController {
         mapView.setRegion(region, animated: true)
         
         isLiked()
+        isUploaded()
     }
     
     func isLiked() {
-        
         let docRef = db.collection("Favourites").whereField("id", isEqualTo: selectedRestaurant.getId()).limit(to: 1)
         docRef.getDocuments { (querysnapshot, error) in
             if error != nil {
@@ -70,6 +71,25 @@ class SelectedViewController: UIViewController {
                 } else {
                     print("Document is not present.")
                     self.isLikedButton.title = "UnLiked"
+                }
+            }
+        }
+
+    }
+    
+    func isUploaded() {
+        
+        let docRef = db.collection("Photos").whereField("id", isEqualTo: selectedRestaurant.getId()).limit(to: 1)
+        docRef.getDocuments { (querysnapshot, error) in
+            if error != nil {
+                print("Document Error: ", error!)
+            } else {
+                if let doc = querysnapshot?.documents, !doc.isEmpty {
+                    print("Uploaded")
+                    self.uploadLabel.text = "Delete Photo on Cloud"
+                } else {
+                    print("Not uploaded")
+                    self.uploadLabel.text = "Upload Photo to Cloud"
                 }
             }
         }
@@ -142,4 +162,65 @@ class SelectedViewController: UIViewController {
         }
     }
     
+    @IBAction func openWithSafari(_ sender: UIButton) {
+        
+        var url: String = selectedRestaurant.getWebUrl()
+        let webUrl = url.split(separator: "?")
+        url = webUrl[0].description
+        
+        
+        if let requestUrl = URL(string: "url") {
+             UIApplication.shared.open(requestUrl as URL)
+        } else {
+            print("failed safari")
+            let ac = UIAlertController(title: "Failed", message: "Url couldn't open with Safari", preferredStyle: .alert)
+            ac.addAction(UIAlertAction(title: "OK", style: .default))
+            self.present(ac, animated: true)
+        }
+        
+    }
+    
+    @IBAction func uploadTap(_ sender: UIButton) {
+    
+        if uploadLabel.text == "Delete Photo on Cloud" {
+            print("it's already added to database.")
+            db.collection("Photos").whereField("id", isEqualTo: selectedRestaurant.getId()).getDocuments { (querySnapshot, error) in
+                if error != nil {
+                    print(error)
+                } else {
+                    for document in querySnapshot!.documents {
+                        document.reference.delete()
+                    }
+
+                }
+            }
+            self.uploadLabel.text = "Upload Photo to Cloud"
+        } else {
+            print("it's not exist in database.")
+            if let user = Auth.auth().currentUser?.email {
+                db.collection("Photos").addDocument(data: [
+                    "user": user,
+                    "id": selectedRestaurant.getId(),
+                    "name": selectedRestaurant.getName(),
+                    "address": selectedRestaurant.getAddress(),
+                    "latitude": selectedRestaurant.getLatitude(),
+                    "longitude": selectedRestaurant.getLongitude(),
+                    "averageCostForTwo": selectedRestaurant.getAverageCostForTwo(),
+                    "aggregateRating": selectedRestaurant.getAggregateRating(),
+                    "img": selectedRestaurant.getImg(),
+                    "webUrl": selectedRestaurant.getWebUrl(),
+                    "distance": selectedRestaurant.getDistance()
+                ]) { (error) in
+                    if let e = error {
+                        print("İssue on saving data to firestore, \(e)")
+                    } else {
+                        print("Successfully saved data.")
+                        self.uploadLabel.text = "Delete Photo on Cloud"
+                    }
+                }
+            }
+            
+        }
+    
+    }
 }

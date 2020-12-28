@@ -1,35 +1,37 @@
 //
-//  FavouritesViewController.swift
+//  PhotosViewController.swift
 //  Nerde Yesem
 //
-//  Created by Özcan Yılmaz on 20.12.2020.
+//  Created by Özcan Yılmaz on 22.12.2020.
 //
 
 import UIKit
 import Firebase
 
-class FavouritesViewController: UIViewController , UITableViewDelegate, UITableViewDataSource {
+class PhotosViewController: UIViewController , UITableViewDelegate, UITableViewDataSource {
     
-
     @IBOutlet weak var tableView: UITableView!
     var restaurant = [Restaurant]()
     var selectedRestaurant = Restaurant(id: "", name: "", address: "", latitude: "", longitude: "", averageCostForTwo: "", aggregateRating: "", img: "", webUrl: "", distance: "")
     
     let db = Firestore.firestore()
+    var dbUserArray = [String]()
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         tableView.delegate = self
         tableView.dataSource = self
         
-        loadRestaurants()
+        loadPhotos()
+        
     }
     
-    func loadRestaurants() {
+    func loadPhotos() {
         
-        let currentUser = Auth.auth().currentUser?.email
-        db.collection("Favourites")
-            .addSnapshotListener { (querySnapshot, error) in
+        db.collection("Photos")
+            .addSnapshotListener { [self] (querySnapshot, error) in
             
             
             if let e = error {
@@ -49,14 +51,13 @@ class FavouritesViewController: UIViewController , UITableViewDelegate, UITableV
                            let img = data["img"] as? String,
                            let webUrl = data["webUrl"] as? String,
                            let distance = data["distance"] as? String {
-                            if currentUser == user {
-                                let restaurant = Restaurant.init(id: id, name: name, address: address, latitude: latitude, longitude: longitude, averageCostForTwo: averageCostForTwo, aggregateRating: aggregateRating , img: img, webUrl: webUrl, distance: distance)
-                                self.restaurant.append(restaurant)
-                                DispatchQueue.main.async {
-                                        self.tableView.reloadData()
-                                        let indexPath = IndexPath(row: self.restaurant.count - 1, section: 0)
-                                        self.tableView.scrollToRow(at: indexPath, at: .top, animated: false)
-                                }
+                            dbUserArray.append(user)
+                            let restaurant = Restaurant.init(id: id, name: name, address: address, latitude: latitude, longitude: longitude, averageCostForTwo: averageCostForTwo, aggregateRating: aggregateRating , img: img, webUrl: webUrl, distance: distance)
+                            self.restaurant.append(restaurant)
+                            DispatchQueue.main.async {
+                                    self.tableView.reloadData()
+                                    let indexPath = IndexPath(row: self.restaurant.count - 1, section: 0)
+                                    self.tableView.scrollToRow(at: indexPath, at: .top, animated: false)
                             }
                         }
                     }
@@ -82,8 +83,8 @@ class FavouritesViewController: UIViewController , UITableViewDelegate, UITableV
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "FavouritesCell", for: indexPath) as! FavouritesCell
-        cell.restaurantName.text = self.restaurant[indexPath.row].getName()
+        let cell = tableView.dequeueReusableCell(withIdentifier: "PhotosCell", for: indexPath) as! PhotosCell
+        cell.senderLabel.text = dbUserArray[indexPath.row]
         var urlString = ""
         if self.restaurant[indexPath.row].getImg() != "" {
             urlString = self.restaurant[indexPath.row].getImg()
@@ -95,30 +96,30 @@ class FavouritesViewController: UIViewController , UITableViewDelegate, UITableV
         let data = try? Data(contentsOf: url!)
         cell.restaurantImage.image = UIImage(data: data!)
         cell.restaurantImage.image = resizeImage(image: cell.restaurantImage.image!, newWidth: CGFloat(350))
-        cell.restaurantDistance.text = self.restaurant[indexPath.row].getDistance()
         return cell
     }
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         selectedRestaurant = self.restaurant[indexPath.row]
-        performSegue(withIdentifier: "FavouriteSelectedSegue", sender: self)
+        performSegue(withIdentifier: "PhotoSelectedSegue", sender: self)
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "FavouriteSelectedSegue" {
+        if segue.identifier == "PhotoSelectedSegue" {
             let toVC = segue.destination as! SelectedViewController
             toVC.selectedRestaurant = self.selectedRestaurant
-            
         }
     }
-
+    
+    
+    
 }
 
-class FavouritesCell: UITableViewCell {
-
+class PhotosCell: UITableViewCell {
+    
+    
     @IBOutlet weak var restaurantImage: UIImageView!
-    @IBOutlet weak var restaurantName: UILabel!
-    @IBOutlet weak var restaurantDistance: UILabel!
+    @IBOutlet weak var senderLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()

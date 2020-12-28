@@ -57,7 +57,7 @@ class AuthenticationViewController: UIViewController {
             var error: NSError?
             if context.canEvaluatePolicy(.deviceOwnerAuthentication, error: &error) {
 
-                let reason = "Log in to your account"
+                let reason = "Log in to application"
                 context.evaluatePolicy(.deviceOwnerAuthentication, localizedReason: reason ) { success, error in
 
                     if success {
@@ -67,12 +67,12 @@ class AuthenticationViewController: UIViewController {
                         }
 
                     } else {
-                        
+
                         print(error?.localizedDescription ?? "Failed to authenticate")
                         let ac = UIAlertController(title: "Authentication failed", message: "Sorry!", preferredStyle: .alert)
                         ac.addAction(UIAlertAction(title: "OK", style: .default))
                         self.present(ac, animated: true)
-                        
+
                     }
                 }
             } else {
